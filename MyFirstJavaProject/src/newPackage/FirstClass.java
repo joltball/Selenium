@@ -4,7 +4,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class FirstClass {
 	public static void main(String[] args) {
-		System.setProperty("webdriver.gecko.driver","C:\\Users\\Bhanu\\Desktop\\Learn Selenium\\geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Bhanu\\Desktop\\Learn Selenium\\Browser Drivers\\geckodriver.exe");
         // declaration and instantiation of objects/variables
         WebDriver driver = new FirefoxDriver();
         String baseUrl = "http://newtours.demoaut.com";
@@ -12,8 +12,8 @@ public class FirstClass {
         String actualTitle = "";
 
         // launch Firefox and direct it to the Base URL
-        driver.get(baseUrl);
-
+        driver.get(baseUrl);        
+        
         // get the actual value of the title
         actualTitle = driver.getTitle();
 
@@ -21,6 +21,7 @@ public class FirstClass {
          * compare the actual title of the page with the expected one and print
          * the result as "Passed" or "Failed"
          */
+        
         if (actualTitle.contentEquals(expectedTitle)){
             System.out.println("Test Passed!");
         } else {
@@ -28,7 +29,7 @@ public class FirstClass {
         }
        
         //close Firefox
-        driver.close();
+        driver.quit();
        
         // exit the program explicitly
         System.exit(0);
